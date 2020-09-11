@@ -1,0 +1,19 @@
+  
+name: Build Docker
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  docker-build:
+    name: Ensure Docker Builds Without Error
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Build Docker and Run Tests
+      - name: build docker
+        run: |
+          DEFINE_YOUR=${{secrets.ENV_VIA_SECRETS_HERE}} docker-compose up -d name your containers here
+ 
